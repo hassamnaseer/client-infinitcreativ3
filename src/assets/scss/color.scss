@@ -1,0 +1,119 @@
+
+@import "theme/variables";
+@import "style";
+html {
+	&.color-2 {
+		$primary-color: #ff4c3b;
+		$secondary-color: #26c6da;
+		$gradient-primary: linear-gradient(to bottom right, lighten($primary-color, 8%), darken($primary-color, 5%));
+		$gradient-secondary: linear-gradient(to bottom right, lighten($secondary-color, 8%), darken($secondary-color, 8%));
+		$gradient-primary-direction: linear-gradient(to right, lighten($primary-color, 8%), darken($primary-color, 5%));
+        $gradient-secondary-direction: linear-gradient(to right, lighten($secondary-color, 8%), darken($secondary-color, 8%));
+		$ancher-color: $primary-color;
+		$all-focus-outline-color: $primary-color;
+		$code-tag-color: $primary-color;
+		$pre-tag-bg-color: rgba($primary-color, 0.03);
+		$list-group-active-bg-color: $primary-color;
+		$list-group-active-border-color: $primary-color;
+		$common-shadow-color :$primary-color;
+		$tour-color: $primary-color;
+		$sidebar-shadow: 0 16px 15px 15px rgba($primary-color, 0.03);
+		$sidebar-hover-txt-color: $primary-color;
+		$common-box-shadow: 2px 3.464px 8px 0px rgba( $primary-color, 0.18 );
+		$main-header-right-nav-icon-color :  $primary-color;
+		@import "style";
+
+	}
+	&.color-3 {
+		$primary-color: #d64dcf;
+		$secondary-color :#8e24aa;
+		$gradient-primary: linear-gradient(to bottom right, lighten($primary-color, 8%), darken($primary-color, 5%));
+		$gradient-secondary: linear-gradient(to bottom right, lighten($secondary-color, 8%), darken($secondary-color, 8%));
+		$gradient-primary-direction: linear-gradient(to right, lighten($primary-color, 8%), darken($primary-color, 5%));
+        $gradient-secondary-direction: linear-gradient(to right, lighten($secondary-color, 8%), darken($secondary-color, 8%));
+		$ancher-color: $primary-color;
+		$all-focus-outline-color: $primary-color;
+		$code-tag-color: $primary-color;
+		$pre-tag-bg-color: rgba($primary-color, 0.03);
+		$list-group-active-bg-color: $primary-color;
+		$list-group-active-border-color: $primary-color;
+		$common-shadow-color :$primary-color;
+		$tour-color: $primary-color;
+		$sidebar-shadow: 0 16px 15px 15px rgba($primary-color, 0.03);
+		$sidebar-hover-txt-color: $primary-color;
+		$common-box-shadow: 2px 3.464px 8px 0px rgba( $primary-color, 0.18 );
+		$main-header-right-nav-icon-color :  $primary-color;
+
+		@import "style";
+
+	}
+	&.color-4 {
+		$primary-color: #4c2fbf;
+		$secondary-color: #2e9de4;
+		$gradient-primary: linear-gradient(to bottom right, lighten($primary-color, 8%), darken($primary-color, 5%));
+		$gradient-secondary: linear-gradient(to bottom right, lighten($secondary-color, 8%), darken($secondary-color, 8%));
+		$gradient-primary-direction: linear-gradient(to right, lighten($primary-color, 8%), darken($primary-color, 5%));
+        $gradient-secondary-direction: linear-gradient(to right, lighten($secondary-color, 8%), darken($secondary-color, 8%));
+		$ancher-color: $primary-color;
+		$all-focus-outline-color: $primary-color;
+		$code-tag-color: $primary-color;
+		$pre-tag-bg-color: rgba($primary-color, 0.03);
+		$list-group-active-bg-color: $primary-color;
+		$list-group-active-border-color: $primary-color;
+		$common-shadow-color :$primary-color;
+		$tour-color: $primary-color;
+		$sidebar-shadow: 0 16px 15px 15px rgba($primary-color, 0.03);
+		$sidebar-hover-txt-color: $primary-color;
+		$common-box-shadow: 2px 3.464px 8px 0px rgba( $primary-color, 0.18 );
+		$main-header-right-nav-icon-color :  $primary-color;
+
+		@import "style";
+
+	}
+	&.color-5 {
+		$primary-color: #7c4dff;
+		$secondary-color: #7b1fa2;
+		$gradient-primary: linear-gradient(to bottom right, lighten($primary-color, 8%), darken($primary-color, 5%));
+		$gradient-secondary: linear-gradient(to bottom right, lighten($secondary-color, 8%), darken($secondary-color, 8%));
+		$gradient-primary-direction: linear-gradient(to right, lighten($primary-color, 8%), darken($primary-color, 5%));
+        $gradient-secondary-direction: linear-gradient(to right, lighten($secondary-color, 8%), darken($secondary-color, 8%));
+		$ancher-color: $primary-color;
+		$all-focus-outline-color: $primary-color;
+		$code-tag-color: $primary-color;
+		$pre-tag-bg-color: rgba($primary-color, 0.03);
+		$list-group-active-bg-color: $primary-color;
+		$list-group-active-border-color: $primary-color;
+		$common-shadow-color :$primary-color;
+		$tour-color: $primary-color;
+		$sidebar-shadow: 0 16px 15px 15px rgba($primary-color, 0.03);
+		$sidebar-hover-txt-color: $primary-color;
+		$common-box-shadow: 2px 3.464px 8px 0px rgba( $primary-color, 0.18 );
+		$main-header-right-nav-icon-color :  $primary-color;
+
+		@import "style";
+
+	}
+	&.color-6 {
+		$primary-color: #3949ab;
+		$secondary-color: #4fc3f7;
+		$gradient-primary: linear-gradient(to bottom right, lighten($primary-color, 8%), darken($primary-color, 5%));
+		$gradient-secondary: linear-gradient(to bottom right, lighten($secondary-color, 8%), darken($secondary-color, 8%));
+		$gradient-primary-direction: linear-gradient(to right, lighten($primary-color, 8%), darken($primary-color, 5%));
+        $gradient-secondary-direction: linear-gradient(to right, lighten($secondary-color, 8%), darken($secondary-color, 8%));
+		$ancher-color: $primary-color;
+		$all-focus-outline-color: $primary-color;
+		$code-tag-color: $primary-color;
+		$pre-tag-bg-color: rgba($primary-color, 0.03);
+		$list-group-active-bg-color: $primary-color;
+		$list-group-active-border-color: $primary-color;
+		$common-shadow-color :$primary-color;
+		$tour-color: $primary-color;
+		$sidebar-shadow: 0 16px 15px 15px rgba($primary-color, 0.03);
+		$sidebar-hover-txt-color: $primary-color;
+		$common-box-shadow: 2px 3.464px 8px 0px rgba( $primary-color, 0.18 );
+		$main-header-right-nav-icon-color :  $primary-color;
+
+		@import "style";
+
+	}
+}
