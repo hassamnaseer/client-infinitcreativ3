@@ -6,6 +6,7 @@ import {Row,Col,Form,FormGroup,Button,Media} from 'reactstrap'
 import {MENUITEMS} from '../sidebar/menu'
 import {Link} from 'react-router-dom'
 import app from "../../../data/base";
+import axios from 'axios';
 const Header = (props) => {
     
     const [profile, setProfile] = useState('');
@@ -204,37 +205,87 @@ const Header = (props) => {
     
     }
 
+    const logout = () => {
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("jwt")
+        localStorage.removeItem("userId");
+      }
+      axios.get("http://localhost:8080/logout")
+      .then((response) => {
+        return response.json()
+      }).catch((err) => {
+        console.log(err);
+      })
+    }
 
     return (
-        <div className="page-main-header">
-        <div className="main-header-right" style={{marginBottom: "25px"}}>
-          <div className="main-header-left text-center">
-            <div className="logo-wrapper"><Link to="/dashboard/default"><img src={require("../../../assets/images/logo/logo.png")} alt=""/></Link></div>
-          </div>
-          <div className="mobile-sidebar">
-            <div className="media-body text-right switch-sm">
-              <label className="switch ml-3"><AlignCenter className="font-primary" onClick={() => openCloseSidebar(sidebar)} /></label>
-            </div>
-          </div>
-          <div className="vertical-mobile-sidebar"><i className="fa fa-bars sidebar-bar"></i></div>
-          <div className="nav-right col pull-right right-menu">
-            <ul className="nav-menus pull-right">
-              <div className="avatar"><Media body className="img-50 rounded-circle" src={require('../../../assets/images/user/10.jpg')} alt="#"/></div>
-            </ul>
-            <div className="d-lg-none mobile-toggle pull-right" onClick={Navmenuhideandshow}><MoreHorizontal/></div>
-          </div>
-          <script id="result-template" type="text/x-handlebars-template">
-            <div className="ProfileCard u-cf">                        
-            <div className="ProfileCard-avatar"><i className="pe-7s-home"></i></div>
-            <div className="ProfileCard-details">
-            <div className="ProfileCard-realName"></div>
-            </div>
-            </div>
-          </script>
-          <script id="empty-template" type="text/x-handlebars-template"><div className="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
-        </div>
-      </div>
-    );
+			<div className="page-main-header">
+				<div className="main-header-right" style={{ marginBottom: "25px" }}>
+					<div className="main-header-left text-center">
+						<div className="logo-wrapper">
+							<Link to="/">
+								<img
+									src={require("../../../assets/images/logo/logo.png")}
+									alt=""
+								/>
+							</Link>
+						</div>
+					</div>
+					<div className="mobile-sidebar">
+						<div className="media-body text-right switch-sm">
+							<label className="switch ml-3">
+								<AlignCenter
+									className="font-primary"
+									onClick={() => openCloseSidebar(sidebar)}
+								/>
+							</label>
+						</div>
+					</div>
+					<div className="vertical-mobile-sidebar">
+						<i className="fa fa-bars sidebar-bar"></i>
+					</div>
+					<div className="nav-right col pull-right right-menu">
+						<ul className="nav-menus pull-right">
+							<div className="avatar">
+								<h5><a href="/auth" onClick={() => logout()}>Logout</a></h5>
+							</div>
+						</ul>
+						<ul className="nav-menus pull-right">
+							<div className="avatar">
+								<Media
+									body
+									className="img-50 rounded-circle"
+									src={require("../../../assets/images/user/10.jpg")}
+									alt="#"
+								/>
+							</div>
+						</ul>
+						<div
+							className="d-lg-none mobile-toggle pull-right"
+							onClick={Navmenuhideandshow}
+						>
+							<MoreHorizontal />
+						</div>
+					</div>
+					<script id="result-template" type="text/x-handlebars-template">
+						<div className="ProfileCard u-cf">
+							<div className="ProfileCard-avatar">
+								<i className="pe-7s-home"></i>
+							</div>
+							<div className="ProfileCard-details">
+								<div className="ProfileCard-realName"></div>
+							</div>
+						</div>
+					</script>
+					<script id="empty-template" type="text/x-handlebars-template">
+						<div className="EmptyMessage">
+							Your search turned up 0 results. This most likely means the
+							backend is down, yikes!
+						</div>
+					</script>
+				</div>
+			</div>
+		);
 }
 
 export default Header;

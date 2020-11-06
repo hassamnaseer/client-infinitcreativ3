@@ -189,7 +189,7 @@ import Supportticket from '../pages/supportticket'
 import Searchwebsite from '../pages/search/searchwebsite'
 
 export const routes = [
-    { path: '/dashboard/default', Component: Default },
+    { path: '/', Component: Default },
     { path: '/dashboard/crypto', Component: Crypto },
     { path: '/dashboard/ecommerce', Component: Ecommerce },
     { path: '/dashboard/generalwidget', Component: Generalwidgets  },
@@ -249,13 +249,13 @@ export const routes = [
     { path:"/ui-element/ionic-icon" ,Component:Ionicicon},
 
 
-    { path:"/charts/apexcharts" ,Component:Apexcharts},
+    { path:"/sales" ,Component:Apexcharts},
     { path:"/charts/googlecharts" ,Component:Googlecharts},
     { path:"/charts/knobcharts" ,Component:Knobcharts},
     { path:"/charts/chartjscharts" ,Component:Chartjs},
     { path:"/charts/chartistcharts" ,Component:Chartistchart},
 
-    { path:"/form/form-validation" ,Component:Formvalidation},
+    { path:"/purchases" ,Component:Formvalidation},
     { path:"/form/base-input" ,Component:BaseInput},
     { path:"/form/radio-checkbox-control" ,Component:Checkboxandradio},
     { path:"/form/input-group" ,Component:InputGroup},
@@ -268,7 +268,7 @@ export const routes = [
     { path:"/form-widget/timepicker" ,Component:Timepicker},
     { path:"/form-widget/typeahead" ,Component:Typeahead},
 
-    { path:"/tables/bootstrap-basic-table" ,Component:Basictable},
+    { path:"/redeem" ,Component:Basictable},
     { path:"/tables/bootstrap-sizing-table" ,Component:Sizingtable},
     { path:"/tables/bootstrap-border-table" ,Component:Bordertable},
     { path:"/tables/bootstrap-styling-table" ,Component:Stylingtable},
@@ -280,7 +280,7 @@ export const routes = [
     { path:"/cards/draggable" ,Component:DraggingCards},
 
 
-    { path:"/ecommerce-app/product" ,Component:Product},
+    { path:"/wallet" ,Component:Product},
     { path:"/ecommerce-app/product-page" ,Component:Productpage},
     { path:"/ecommerce-app/product-list" ,Component:Productlist},
     { path:"/ecommerce-app/product-details" ,Component:Productdetails},

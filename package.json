@@ -1,5 +1,6 @@
 {
   "name": "poco-react",
+  "homepage": "http://goldana.net/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "express": "^4.17.1",
     "feather-icons": "^4.28.0",
     "firebase": "^7.14.2",
+    "firebase-tools": "^8.12.1",
     "google-maps-react": "^2.0.6",
     "http-proxy-middleware": "^1.0.6",
     "knob": "^1.1.0",
@@ -126,6 +128,12 @@
     "reportUnusedDisableDirectives": true,
     "noInlineConfig": true
   },
+  "devDependencies": {
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -137,11 +145,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "moment": "^2.24.0",
-    "moment-timezone": "^0.5.26",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2"
   }
 }

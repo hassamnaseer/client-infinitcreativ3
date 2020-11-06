@@ -1,0 +1,22 @@
+There are two users available:
+1)
+	email: customer1@gmail.com
+	password: abc123
+
+2)
+	email: customer2@gmail.com
+	password: abc123
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+'Customer Two' has introduced 'Customer One' so 'Customer Two' will earn PV from 'Customer One'
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+When you login from customer1@gmail.com and go to sales tab, you will not see any entry because this user didn't introduce any one
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+When you login from customer2@gmail.com and go to sales tab, you will see one entry because this user introduced only one user which is customer1
+
+------------------------------------------------------------------------------------------------------------------------------------------------
