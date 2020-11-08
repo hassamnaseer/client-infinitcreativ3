@@ -35,6 +35,7 @@ import {
 	ModalBody,
 } from "reactstrap";
 import { MoreHorizontal } from "react-feather";
+import axios from "axios";
 
 const Default = (props) => {
 	// eslint-disable-next-line
@@ -48,6 +49,10 @@ const Default = (props) => {
 		localStorage.setItem("isUser", null);
 	};
 	const onChange = (date) => setDate(date);
+	const [user, setUser] = useState({})
+	const [introducedUsers, setIntroducedUsers] = useState([])
+	const [renderNow, setRender] = useState(false)
+	let temp = [];
 
 	useEffect(() => {
 		if (localStorage.getItem("isUser") === "true") {
@@ -55,12 +60,78 @@ const Default = (props) => {
 		} else {
 			setModal(false);
 		}
+		let introducedUsersArray = [];
+		const userEmail = localStorage.getItem("userEmail");
+		async function getCurrentUser() {
+			await axios.get(`https://backend-node-1.herokuapp.com/user-email/${userEmail}`).then((user) => {
+				setUser(user.data)
+				introducedUsersArray.push(user.data.UsersIntroduced)
+			});
+
+			introducedUsersArray.map(async (introducedUserId) => {
+				await axios.get(`https://backend-node-1.herokuapp.com/user/${introducedUserId}`).then((introducedUser) => {
+					const tempArr = introducedUsers
+					tempArr.push(introducedUser.data)
+					setIntroducedUsers(tempArr)
+					if (introducedUsersArray.length === introducedUsers.length) setRender(true)
+				});
+			});
+
+		}
+
+		getCurrentUser()
 	}, []);
 
 	return (
 		<Fragment>
 			<Breadcrumb parent="Dashboard" title="Dashboard" />
 			<Container fluid={true}>
+				<Row>
+					<div className="col-md-4">
+						<div className="card">
+							<div className="card-header">
+								<h5>My Referral Code</h5>
+							</div>
+							<div style={{ padding: 30 }}>{user.ReferralLink}</div>
+						</div>
+					</div>
+					<div className="col-md-8">
+						<div className="card">
+							<div className="card-header">
+								<h5>My Introduced Users</h5>
+							</div>
+							{renderNow && introducedUsers.length > 0 ? (
+								<div className="table-responsive">
+									<table className="table">
+										<thead>
+											<tr>
+												<th scope="col">#</th>
+												<th scope="col">First Name</th>
+												<th scope="col">Last Name</th>
+												<th scope="col">Email</th>
+											</tr>
+										</thead>
+										<tbody>
+											{renderNow &&
+												introducedUsers.map((i_user, index) => {
+													return (
+														<tr>
+															<th scope="row">{index + 1}</th>
+															<td>{i_user.FirstName}</td>
+															<td>{i_user.LastName}</td>
+															<td>{i_user.Email}</td>
+														</tr>
+													);
+												})}
+										</tbody>
+									</table>
+								</div>
+							) : (
+								<div style={{ padding: 30 }}>No Users Introduced</div>
+							)}
+						</div>
+					</div>
+				</Row>
 				<Row>
 					<Col lg="12 xl-100">
 						<Row>
@@ -148,7 +219,7 @@ const Default = (props) => {
 									</h2>
 								</div>
 							</div>
-							<div className="col-md-8">
+							{/* <div className="col-md-8">
 								<div className="card">
 									<div className="card-header">
 										<h5>Commission System</h5>
@@ -210,7 +281,7 @@ const Default = (props) => {
 										</table>
 									</div>
 								</div>
-							</div>
+							</div> */}
 						</Row>
 					</Col>
 				</Row>

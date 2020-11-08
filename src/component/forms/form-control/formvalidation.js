@@ -92,7 +92,7 @@ const Formvalidation = (props) => {
 			await axios
 				.get(
 					`https://backend-node-1.herokuapp.com/user-email/${localStorage.getItem(
-						"userEmail",
+						"userEmail"
 					)}`,
 				)
 				.then((user) => {
